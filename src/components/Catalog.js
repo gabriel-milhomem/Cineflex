@@ -1,33 +1,25 @@
 import React from "react";
 import styled from "styled-components";
 import PosterList from "./PosterList";
+import { Title } from "../styled/styles";
+import MoviesContext from "../contexts/MoviesContext";
 
 export default function Catalog() {
-    
-    return(
-        <Main >
-            <h2> Selecione o filme </h2>
+    const movies = React.useContext(MoviesContext);
 
-             <ul>
+    return(
+        <main>
+            <Title> Selecione o filme </Title>
+
+             <ContainerPost>
                 <PosterList />
-             </ul>
-        </Main>
+             </ContainerPost>
+        </main>
     );
 }
 
-const Main = styled.main`
-    padding-top: 30px;
-    text-align: center;
-
-    h2 {
-        font-size: 24px;
-        margin-bottom: 30px;
-    }
-
-    ul {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-    }
+const ContainerPost = styled.ul`
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
 `;
-

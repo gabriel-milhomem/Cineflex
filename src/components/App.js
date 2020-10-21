@@ -2,8 +2,8 @@ import React from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Header from "./Header";
 import Catalog from "./Catalog";
-
-import {MoviesProvider} from "../contexts/MoviesContext";
+import Sections from "./Sections";
+import { MoviesProvider } from "../contexts/MoviesContext";
 
 export default function App() {
     return (
@@ -13,7 +13,7 @@ export default function App() {
 
                 <Switch>
                     <Route path= "/sessoes/:id">
-
+                        <Sections />
                     </Route>
                     <Route path= "/">
                         <Catalog />

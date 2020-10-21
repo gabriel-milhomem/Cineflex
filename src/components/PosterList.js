@@ -8,10 +8,10 @@ export default function PosterList() {
 
     return (
         <>
-            {moviesList.map(movie => (
-                <Poster key= {movie.id}>
-                    <Link to= {`/sessoes/${movie.id}`}>
-                        <img src= {movie.posterURL}/>
+            {moviesList.map(({id, posterURL}) => (
+                <Poster key= {id}>
+                    <Link to= {`/sessoes/${id}`}>
+                        <img src= {posterURL}/>
                     </Link>
                 </Poster>
             ))}
