@@ -18,6 +18,11 @@ export const Button =  styled.button`
     margin: 0px 10px 10px 0px;
 `;
 
+export const Main = styled.main`
+    height: calc(100vh - 170px);
+    overflow-y: scroll;
+`;
+
 export const Footer = styled.footer`
     position: fixed;
     bottom: 0px;
@@ -30,6 +35,7 @@ export const Footer = styled.footer`
     padding: 15px;
     z-index: 1;
     border-top: 1px solid #c3cfd9;
+    font-size: 18px;
 
     img {
         width: 60px;
@@ -40,6 +46,6 @@ export const Footer = styled.footer`
     }
 
     h1 {
-        font-size: 20px;
+        margin-bottom: 10px;
     }
 `;

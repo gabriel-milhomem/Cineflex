@@ -4,13 +4,13 @@ import { Link } from "react-router-dom";
 import MoviesContext from "../contexts/MoviesContext";
 
 export default function PosterList() {
-    const moviesList = React.useContext(MoviesContext);
+    const {movies, filteredMovie} = React.useContext(MoviesContext);
 
     return (
         <>
-            {moviesList.map(({id, posterURL}) => (
+            {movies.map(({id, posterURL}) => (
                 <Poster key= {id}>
-                    <Link to= {`/sessoes/${id}`}>
+                    <Link onClick= {() => filteredMovie(id)} to= {`/sessoes`}>
                         <img src= {posterURL}/>
                     </Link>
                 </Poster>

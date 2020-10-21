@@ -1,20 +1,19 @@
 import React from "react";
-import styled from "styled-components";
-import { useParams } from "react-router-dom";
-import { Title, Footer } from "../styled/styles";
+import { Title, Footer, Main } from "../styled/styles";
 import MoviesContext from "../contexts/MoviesContext";
 import SessionDays from "./SessionDays";
 
 export default function Sections() {
-    const { id } = useParams();
-    const moviesList = React.useContext(MoviesContext);
-    const {posterURL, title, days} = moviesList.find(movie => movie.id === parseInt(id));
+    const {userChoice, filteredDay} = React.useContext(MoviesContext);
+    const {title, posterURL, days, id} = userChoice;
+
+    console.log(userChoice);
 
     return(
         <Main>
             <Title> Selecione o Horário </Title>
             
-            <SessionDays days= {days}/>
+            <SessionDays days= {days} filteredDay= {filteredDay}/>
 
             <Footer> 
                 <img src= {posterURL} />
@@ -23,8 +22,3 @@ export default function Sections() {
         </Main>
     );
 }
-
-const Main = styled.main`
-    height: calc(100vh - 170px);
-    overflow-y: scroll;
-`;
