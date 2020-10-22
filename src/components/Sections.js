@@ -7,8 +7,6 @@ export default function Sections() {
     const {userChoice, filteredDay} = React.useContext(MoviesContext);
     const {title, posterURL, days, id} = userChoice;
 
-    console.log(userChoice);
-
     return(
         <Main>
             <Title> Selecione o Horário </Title>
