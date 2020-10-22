@@ -7,15 +7,16 @@ export const Title = styled.h1`
 `;
 
 export const Button =  styled.button`
-    width: ${props => `${props.width}px`};
-    height: ${props => `${props.height}px`};
+    width: ${props => props.width};
+    height: ${props => props.height};
     color: white;
     display: flex;
     align-items: center;
     justify-content: center;
     border-radius: 5px;
     background: #E8833A;
-    margin: 0px 10px 10px 0px;
+    text-align: ${props => props.align};
+    margin: ${props => props.margin};
 `;
 
 export const Main = styled.main`
