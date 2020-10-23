@@ -6,9 +6,11 @@ const MoviesContext = React.createContext();
 export default MoviesContext;
 
 export function MoviesProvider(props) {
+    
+    const [errorMessage, setErrorMessage] = useState(false);
+    const [backup, setBackup] = useState(null);
     const [movies, setMovies] = useState([]);
     const [userChoice, setUserChoice] = useState(null);
-    const [errorMessage, setErrorMessage] = useState(false);
 
     useEffect(() => {
         const request = axios.get("https://mock-api.bootcamp.respondeai.com.br/api/v1/cineflex/movies");
@@ -16,9 +18,13 @@ export function MoviesProvider(props) {
     }, [])
 
     function filteredMovie(id) {
-        const selected = movies.find(movie => movie.id === parseInt(id));
+        const movieSelected = movies.find(movie => movie.id === parseInt(id));
+        setBackup(JSON.parse(JSON.stringify(movieSelected)));
+        setUserChoice(movieSelected);
+    }
 
-        setUserChoice(selected);
+    function backUp() {
+        setUserChoice(backup);
     }
 
     function filteredDay(idDays, idTime) {
@@ -61,16 +67,15 @@ export function MoviesProvider(props) {
         const seatsSelected = seats.filter(s => s.selected === true);
 
         postIdSeats.ids = seatsSelected.map(seat => seat.id);
-        console.log("POST", postIdSeats);
         axios.post(link, postIdSeats);
     }
 
-    const contextValue = {movies, userChoice, errorMessage, filteredMovie, filteredDay, createSelectedSeats, checkSeat, postSeats};
+    const contextValue = {movies, userChoice, errorMessage, backUp, filteredMovie, filteredDay, createSelectedSeats, checkSeat, postSeats};
 
     return (
         <MoviesContext.Provider value= {contextValue}>
             {props.children}
-            
+
         </MoviesContext.Provider>
     )
 }

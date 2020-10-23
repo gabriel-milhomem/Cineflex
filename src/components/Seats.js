@@ -6,14 +6,14 @@ import { Title, Footer, Main, Button } from "../styled/styles";
 import MovieTheater from "./MovieTheater";
 
 export default function Seats() {
-    const {userChoice, createSelectedSeats, postSeats} = useContext(MoviesContext);
+    const {userChoice, createSelectedSeats, postSeats, backUp} = useContext(MoviesContext);
     const {posterURL, title, days} = userChoice;
 
     useEffect(() => createSelectedSeats(), []);
 
     return(
         <Main>
-            <Link to= "/sessoes">
+            <Link onClick = {backUp} to= "/sessoes">
                 <ion-icon name= "arrow-back-circle-outline"> </ion-icon>
             </Link>
 

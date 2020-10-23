@@ -7,6 +7,8 @@ import { Button } from "../styled/styles";
 export default function SessionDays(props) {
     const { days, filteredDay } = props;
 
+    console.log("DAYS", days);
+
     return (
         <ContainerLi>
             {days.map(({id: ID, weekday, date, showtimes}) => (
