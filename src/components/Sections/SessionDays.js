@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 
-import { Button } from "../styled/styles";
+import { Button } from "../../styled/styles";
 
 export default function SessionDays(props) {
     const { days, filteredDay } = props;

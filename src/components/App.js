@@ -2,9 +2,9 @@ import React from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 import Header from "./Header";
-import Catalog from "./Catalog";
-import Sections from "./Sections";
-import Seats from "./Seats";
+import Catalog from "./Catalog/Catalog";
+import Sections from "./Sections/Sections";
+import Seats from "./Seats/Seats";
 import Sucess from "./Sucess";
 import { MoviesProvider } from "../contexts/MoviesContext";
 

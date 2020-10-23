@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import styled from "styled-components";
 
-import MoviesContext from "../contexts/MoviesContext";
+import MoviesContext from "../../contexts/MoviesContext";
 
 export default function MovieTheater() {
     const {userChoice, checkSeat, errorMessage} = useContext(MoviesContext);

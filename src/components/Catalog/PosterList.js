@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 
-import MoviesContext from "../contexts/MoviesContext";
+import MoviesContext from "../../contexts/MoviesContext";
 
 export default function PosterList() {
     const {movies, filteredMovie} = useContext(MoviesContext);

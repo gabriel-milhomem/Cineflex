@@ -1,8 +1,8 @@
 import React, { useContext, useEffect } from "react";
 import { Link } from "react-router-dom";
 
-import MoviesContext from "../contexts/MoviesContext";
-import { Title, Footer, Main, Button } from "../styled/styles";
+import MoviesContext from "../../contexts/MoviesContext";
+import { Title, Footer, Main, Button } from "../../styled/styles";
 import MovieTheater from "./MovieTheater";
 
 export default function Seats() {

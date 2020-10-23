@@ -1,8 +1,8 @@
 import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 
-import { Title, Footer, Main } from "../styled/styles";
-import MoviesContext from "../contexts/MoviesContext";
+import { Title, Footer, Main } from "../../styled/styles";
+import MoviesContext from "../../contexts/MoviesContext";
 import SessionDays from "./SessionDays";
 
 export default function Sections() {
