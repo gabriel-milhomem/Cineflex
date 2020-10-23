@@ -13,7 +13,7 @@ export default function Seats() {
 
     return(
         <Main>
-            <Link onClick = {backUp} to= "/sessoes">
+            <Link onClick= {backUp} to= "/sessoes">
                 <ion-icon name= "arrow-back-circle-outline"> </ion-icon>
             </Link>
 
@@ -22,7 +22,7 @@ export default function Seats() {
             <MovieTheater />
 
             <Link to= "/sucesso">
-                <Button onClick = {() => postSeats(days.showtimes.seats)} width= {"11.56rem"} height= {"2.18rem"} margin= {"0px auto 1.87rem auto"}>
+                <Button onClick = {event => postSeats(days.showtimes.seats, event)} width= {"11.56rem"} height= {"2.18rem"} margin= {"0px auto 1.87rem auto"}>
                         <span> Reservar assento(s) </span>
 
                 </Button>

@@ -82,7 +82,8 @@ const Room = styled.div`
 `;
 
 const Error = styled.p`
-    color: #EA5455;
+    color: red;
     margin-bottom: 0.625rem;
     text-align: center;
+    font-weight: 600;
 `;

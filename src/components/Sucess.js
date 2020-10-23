@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 import MoviesContext from "../contexts/MoviesContext";
 
 export default function Sucess() {
-    const {userChoice} = useContext(MoviesContext);
+    const {userChoice, newBuy} = useContext(MoviesContext);
     const {title, days} = userChoice;
 
     return (
@@ -31,7 +31,7 @@ export default function Sucess() {
             </ContainerNameSeats>
 
             <Link to= "/">
-                <Button width= {"11.56rem"} height= {"2.18rem"} margin= {"10px auto 30px auto"}> Home </Button>
+                <Button onClick= {newBuy} width= {"11.56rem"} height= {"2.18rem"} margin= {"10px auto 30px auto"}> Home </Button>
 
             </Link>
             
