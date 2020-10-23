@@ -15,7 +15,7 @@ export default function SessionDays(props) {
                     <div>
                         {showtimes.map(({id, name}) => (
                             <Link key= {id} to= "/assentos">
-                                <Button onClick= {() => filteredDay(ID, id)} height= {"40px"} width= {"70px"} align= {"left"} margin= {"0px 10px 10px 0px"}>
+                                <Button onClick= {() => filteredDay(ID, id)} height= {"40px"} width= {"70px"} margin= {"0px 10px 10px 0px"}>
                                     <time> {name} </time> 
                                 </Button>
                             </Link>

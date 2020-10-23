@@ -5,9 +5,6 @@ import MoviesContext from "../contexts/MoviesContext";
 export default function MovieTheater() {
     const {userChoice, checkSeat, errorMessage} = React.useContext(MoviesContext);
     const seats = userChoice.days.showtimes.seats;
-    console.log(userChoice);
-
-    console.log(seats);
 
     return (
         <>  

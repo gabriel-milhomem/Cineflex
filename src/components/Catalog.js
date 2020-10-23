@@ -7,7 +7,7 @@ export default function Catalog() {
 
     return(
         <main>
-            <Title> Selecione o filme </Title>
+            <Title color= {"#000"}> Selecione o filme </Title>
 
              <ContainerPost>
                 <PosterList />

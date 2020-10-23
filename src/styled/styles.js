@@ -4,6 +4,7 @@ export const Title = styled.h1`
     text-align: center;
     font-size: 24px;
     margin: 30px 0px;
+    color: ${props => props.color};
 `;
 
 export const Button =  styled.button`
@@ -17,6 +18,7 @@ export const Button =  styled.button`
     background: #E8833A;
     text-align: ${props => props.align};
     margin: ${props => props.margin};
+    cursor: pointer;
 `;
 
 export const Main = styled.main`

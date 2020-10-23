@@ -4,6 +4,7 @@ import Header from "./Header";
 import Catalog from "./Catalog";
 import Sections from "./Sections";
 import Seats from "./Seats";
+import Sucess from "./Sucess";
 import { MoviesProvider } from "../contexts/MoviesContext";
 
 export default function App() {
@@ -19,6 +20,10 @@ export default function App() {
 
                     <Route path= "/assentos">
                         <Seats />
+                    </Route>
+
+                    <Route path= "/sucesso">
+                        <Sucess />
                     </Route>
 
                     <Route path= "/">

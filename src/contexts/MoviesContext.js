@@ -33,7 +33,6 @@ export function MoviesProvider(props) {
 
     function checkSeat(idSeat, isSelected, isAvailable) {
         if(isAvailable === false) {
-            window.scrollTo(0, 0);
             setErrorMessage(true);
         }
 
@@ -52,8 +51,18 @@ export function MoviesProvider(props) {
 
     }
 
+    function postSeats(seats) {
+        const link = "https://mock-api.bootcamp.respondeai.com.br/api/v1/cineflex/seats/book_many";
+        const postIdSeats = {"ids": undefined};
+        const seatsSelected = seats.filter(s => s.selected === true);
+
+        postIdSeats.ids = seatsSelected.map(seat => seat.id);
+        console.log("POST", postIdSeats);
+        axios.post(link, postIdSeats);
+    }
+
     return (
-        <MoviesContext.Provider value= {{movies, userChoice, errorMessage, filteredMovie, filteredDay, createSelectedSeats, checkSeat}}>
+        <MoviesContext.Provider value= {{movies, userChoice, errorMessage, filteredMovie, filteredDay, createSelectedSeats, checkSeat, postSeats}}>
             {props.children}
         </MoviesContext.Provider>
     )

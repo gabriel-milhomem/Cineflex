@@ -9,7 +9,7 @@ export default function Sections() {
 
     return(
         <Main>
-            <Title> Selecione o Horário </Title>
+            <Title color= {"#000"}> Selecione o Horário </Title>
             
             <SessionDays days= {days} filteredDay= {filteredDay}/>
 
