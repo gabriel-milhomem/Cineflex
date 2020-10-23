@@ -1,7 +1,8 @@
 import React from "react";
 import styled from "styled-components";
-import { Button } from "../styled/styles";
 import { Link } from "react-router-dom";
+
+import { Button } from "../styled/styles";
 
 export default function SessionDays(props) {
     const { days, filteredDay } = props;
@@ -15,11 +16,12 @@ export default function SessionDays(props) {
                     <div>
                         {showtimes.map(({id, name}) => (
                             <Link key= {id} to= "/assentos">
-                                <Button onClick= {() => filteredDay(ID, id)} height= {"40px"} width= {"70px"} margin= {"0px 10px 10px 0px"}>
+                                <Button onClick= {() => filteredDay(ID, id)} height= {"2.5rem"} width= {"4.375rem"} margin= {"0px 0.625rem 0.625rem 0px"}>
                                     <time> {name} </time> 
                                 </Button>
                             </Link>
                         ))}
+
                     </div>
                 </li>
             ))}
@@ -29,11 +31,11 @@ export default function SessionDays(props) {
 }
 
 const ContainerLi = styled.ul`
-    padding-left: 25px;
+    padding-left: 1.56rem;
 
     li div {
         display: flex;
-        margin: 20px 0px;
+        margin: 1.25rem 0px;
     }
 `;
 

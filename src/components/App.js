@@ -1,5 +1,6 @@
 import React from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+
 import Header from "./Header";
 import Catalog from "./Catalog";
 import Sections from "./Sections";
@@ -8,6 +9,7 @@ import Sucess from "./Sucess";
 import { MoviesProvider } from "../contexts/MoviesContext";
 
 export default function App() {
+
     return (
         <MoviesProvider>
             <Router>

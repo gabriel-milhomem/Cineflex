@@ -1,7 +1,10 @@
 body {
-    font-family: "Roboto", sans-serif;
-    padding-top: 70px;
-    background: #fff;
-    color: #000;
-    font-size: 16px;
+    font-family: 'Poppins', sans-serif;
+    padding-top: 4.375rem;
+    background: #726a95;
+    color: #fff;
+}
+
+html {
+    font-size: 5vw;
 }

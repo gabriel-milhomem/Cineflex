@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState, useEffect} from "react";
 import axios from "axios";
 
 const MoviesContext = React.createContext();
@@ -6,28 +6,31 @@ const MoviesContext = React.createContext();
 export default MoviesContext;
 
 export function MoviesProvider(props) {
-    const [movies, setMovies] = React.useState([]);
-    const [userChoice, setUserChoice] = React.useState(null);
-    const [errorMessage, setErrorMessage] = React.useState(false);
+    const [movies, setMovies] = useState([]);
+    const [userChoice, setUserChoice] = useState(null);
+    const [errorMessage, setErrorMessage] = useState(false);
 
-    React.useEffect(() => {
+    useEffect(() => {
         const request = axios.get("https://mock-api.bootcamp.respondeai.com.br/api/v1/cineflex/movies");
         request.then(response => setMovies(response.data));
     }, [])
 
     function filteredMovie(id) {
         const selected = movies.find(movie => movie.id === parseInt(id));
+
         setUserChoice(selected);
     }
 
     function filteredDay(idDays, idTime) {
         userChoice.days = userChoice.days.find(day => day.id === idDays);
         userChoice.days.showtimes = userChoice.days.showtimes.find(time => time.id === idTime);
+
         setUserChoice({...userChoice});
     }
 
     function createSelectedSeats() {
         userChoice.days.showtimes.seats = userChoice.days.showtimes.seats.map(seat => ({...seat, selected: false}));
+
         setUserChoice({...userChoice});
     }
 
@@ -38,6 +41,7 @@ export function MoviesProvider(props) {
 
         else {
             setErrorMessage(false);
+
             userChoice.days.showtimes.seats = userChoice.days.showtimes.seats.map(seat => {
                 if(idSeat === seat.id) {
                     return {...seat, selected: !isSelected};
@@ -61,9 +65,12 @@ export function MoviesProvider(props) {
         axios.post(link, postIdSeats);
     }
 
+    const contextValue = {movies, userChoice, errorMessage, filteredMovie, filteredDay, createSelectedSeats, checkSeat, postSeats};
+
     return (
-        <MoviesContext.Provider value= {{movies, userChoice, errorMessage, filteredMovie, filteredDay, createSelectedSeats, checkSeat, postSeats}}>
+        <MoviesContext.Provider value= {contextValue}>
             {props.children}
+            
         </MoviesContext.Provider>
     )
 }

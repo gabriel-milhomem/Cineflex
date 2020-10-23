@@ -1,10 +1,11 @@
-import React from "react";
+import React, { useContext } from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
+
 import MoviesContext from "../contexts/MoviesContext";
 
 export default function PosterList() {
-    const {movies, filteredMovie} = React.useContext(MoviesContext);
+    const {movies, filteredMovie} = useContext(MoviesContext);
 
     return (
         <>
@@ -12,6 +13,7 @@ export default function PosterList() {
                 <Poster key= {id}>
                     <Link onClick= {() => filteredMovie(id)} to= {`/sessoes`}>
                         <img src= {posterURL}/>
+
                     </Link>
                 </Poster>
             ))}
@@ -20,10 +22,10 @@ export default function PosterList() {
 }
 
 const Poster = styled.li`
-    width: 130px;
-    height: 180px;
-    padding: 5px;
-    margin: 0px 30px 15px 0px;
+    width: 8.125rem;
+    height: 11.25rem;
+    border: 0.31rem solid #fff;
+    margin: 0px 1.875rem 0.93rem 0px;
     box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.25);
     cursor: pointer;
     border-radius: 10px;
