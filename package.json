@@ -4,25 +4,28 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/bootcamp-ra/09-cineflex.git"
+    "url": "git+https://github.com/gabriel-milhomem/Cineflex.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/bootcamp-ra/09-cineflex/issues"
+    "url": "https://github.com/gabriel-milhomem/Cineflex/issues"
   },
-  "homepage": "https://github.com/bootcamp-ra/09-cineflex#readme",
+  "homepage": "https://github.com/gabriel-milhomem/Cineflex#readme",
   "dependencies": {
     "@babel/core": "^7.12.3",
     "@babel/preset-env": "^7.12.1",
     "@babel/preset-react": "^7.12.1",
     "axios": "^0.20.0",
     "babel-loader": "^8.1.0",
+    "gh-pages": "^3.1.0",
     "react": "^17.0.0",
     "react-dom": "^17.0.0",
     "react-router-dom": "^5.2.0",
