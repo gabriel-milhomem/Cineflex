@@ -1,3 +1,8 @@
+# DEPLOY 
+link : https://cineflex.netlify.app/
+(Coloque na versão mobile), desktop version: em progresso
+
+
 # Descrição
 
 Nessa semana você fará uma Single-Page Application para um cinema, usando ContextAPI e Styled Components!
