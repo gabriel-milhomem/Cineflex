@@ -1,18 +1,18 @@
 import React from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
-import Header from "./Header";
-import Catalog from "./Catalog/Catalog";
-import Sections from "./Sections/Sections";
-import Seats from "./Seats/Seats";
-import Sucess from "./Sucess";
-import { MoviesProvider } from "../contexts/MoviesContext";
+import Header from "./components/Header";
+import Catalog from "./components/Catalog/Catalog";
+import Sections from "./components/Sections/Sections";
+import Seats from "./components/Seats/Seats";
+import Sucess from "./components/Sucess";
+import { MoviesProvider } from "./contexts/MoviesContext";
 
 export default function App() {
 
     return (
-        <MoviesProvider>
-            <Router>
+        <Router basename={process.env.PUBLIC_URL}>
+            <MoviesProvider>
                 <Header />
 
                 <Switch>
@@ -33,7 +33,7 @@ export default function App() {
                     </Route>
 
                 </Switch>
-            </Router>
-        </MoviesProvider>
+            </MoviesProvider>
+        </Router>
     );
 }

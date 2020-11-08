@@ -1,5 +1,5 @@
 {
-  "name": "09-cineflex",
+  "name": "cineflex",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -18,14 +18,13 @@
   "bugs": {
     "url": "https://github.com/gabriel-milhomem/Cineflex/issues"
   },
-  "homepage": "https://github.com/gabriel-milhomem/Cineflex#readme",
+  "homepage": "https://github.com/gabriel-milhomem.github.io/Cineflex",
   "dependencies": {
     "@babel/core": "^7.12.3",
     "@babel/preset-env": "^7.12.1",
     "@babel/preset-react": "^7.12.1",
     "axios": "^0.20.0",
     "babel-loader": "^8.1.0",
-    "gh-pages": "^3.1.0",
     "react": "^17.0.0",
     "react-dom": "^17.0.0",
     "react-router-dom": "^5.2.0",
@@ -33,5 +32,8 @@
     "webpack": "^5.1.3",
     "webpack-cli": "^4.1.0",
     "webpack-dev-server": "^3.11.0"
+  },
+  "devDependencies": {
+    "gh-pages": "^3.1.0"
   }
 }
